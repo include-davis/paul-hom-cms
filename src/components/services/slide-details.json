@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_services_slide_details",
+  "info": {
+    "displayName": "slide_details",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bullet_points": {
+      "type": "text",
+      "required": true
+    },
+    "count_of_bullet_points": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

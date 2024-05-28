@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_services_bulleted_lists",
+  "info": {
+    "displayName": "bulleted_list",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "list_items": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
