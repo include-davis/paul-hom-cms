@@ -90,6 +90,7 @@ export interface HomeHome extends Schema.Component {
   attributes: {
     text: Attribute.Text & Attribute.Required;
     image: Attribute.Media;
+    our_mission_text: Attribute.String & Attribute.Required;
   };
 }
 
@@ -108,12 +109,14 @@ export interface HomeVisitUs extends Schema.Component {
   collectionName: 'components_home_visit_uses';
   info: {
     displayName: 'visit_us';
+    description: '';
   };
   attributes: {
     contact_instruction: Attribute.Text & Attribute.Required;
     phone: Attribute.String & Attribute.Required;
     message: Attribute.String & Attribute.Required;
     address: Attribute.Text & Attribute.Required;
+    visit_us_text: Attribute.String & Attribute.Required;
   };
 }
 

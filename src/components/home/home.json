@@ -17,6 +17,10 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "our_mission_text": {
+      "type": "string",
+      "required": true
     }
   }
 }

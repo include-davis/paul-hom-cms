@@ -1043,6 +1043,13 @@ export interface ApiHeaderHeader extends Schema.SingleType {
           localized: true;
         };
       }>;
+    address: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1099,6 +1106,20 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
         };
       }>;
     image_gallery_overlay_text: Attribute.Component<'home.title-description'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    closure_dates_text: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    upcoming_events_text: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
