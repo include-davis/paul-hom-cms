@@ -1,15 +1,12 @@
 {
   "collectionName": "components_about_us_clinc_lists",
   "info": {
-    "displayName": "clinc_lists"
+    "displayName": "clinc_lists",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "clinic_category_title": {
-      "type": "string",
-      "required": true
-    },
-    "number_of_clinics_in_list": {
       "type": "string",
       "required": true
     },

@@ -6,11 +6,15 @@
   },
   "options": {},
   "attributes": {
-    "slide": {
+    "slides": {
       "displayName": "slide_details",
       "type": "component",
       "repeatable": true,
       "component": "services.slide-details",
+      "required": true
+    },
+    "slide_count": {
+      "type": "string",
       "required": true
     }
   }

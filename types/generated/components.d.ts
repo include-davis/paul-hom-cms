@@ -26,10 +26,10 @@ export interface AboutUsClincLists extends Schema.Component {
   collectionName: 'components_about_us_clinc_lists';
   info: {
     displayName: 'clinc_lists';
+    description: '';
   };
   attributes: {
     clinic_category_title: Attribute.String & Attribute.Required;
-    number_of_clinics_in_list: Attribute.String & Attribute.Required;
     clinic_details: Attribute.Component<'about-us.name-link-combo', true> &
       Attribute.Required;
   };
@@ -77,6 +77,35 @@ export interface CommitteesCommitteeCards extends Schema.Component {
   };
   attributes: {
     card_details: Attribute.Component<'committees.card', true> &
+      Attribute.Required;
+  };
+}
+
+export interface GetInvolvedCardDetails extends Schema.Component {
+  collectionName: 'components_get_involved_card_details';
+  info: {
+    displayName: 'card_details';
+    description: '';
+  };
+  attributes: {
+    title_short: Attribute.String & Attribute.Required;
+    title_long: Attribute.String & Attribute.Required;
+    content_1: Attribute.Text & Attribute.Required;
+    content_2: Attribute.Text & Attribute.Required;
+    sign_up_link: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface GetInvolvedInvolvementCards extends Schema.Component {
+  collectionName: 'components_get_involved_involvement_cards';
+  info: {
+    displayName: 'involvement_cards';
+  };
+  attributes: {
+    opportunity_details: Attribute.Component<
+      'get-involved.card-details',
+      true
+    > &
       Attribute.Required;
   };
 }
@@ -152,8 +181,9 @@ export interface ServicesSlide extends Schema.Component {
     description: '';
   };
   attributes: {
-    slide: Attribute.Component<'services.slide-details', true> &
+    slides: Attribute.Component<'services.slide-details', true> &
       Attribute.Required;
+    slide_count: Attribute.String & Attribute.Required;
   };
 }
 
@@ -166,6 +196,8 @@ declare module '@strapi/types' {
       'about-us.name-link-combo': AboutUsNameLinkCombo;
       'committees.card': CommitteesCard;
       'committees.committee-cards': CommitteesCommitteeCards;
+      'get-involved.card-details': GetInvolvedCardDetails;
+      'get-involved.involvement-cards': GetInvolvedInvolvementCards;
       'home.home': HomeHome;
       'home.title-description': HomeTitleDescription;
       'home.visit-us': HomeVisitUs;

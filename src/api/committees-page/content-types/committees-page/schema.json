@@ -36,6 +36,15 @@
       },
       "component": "committees.committee-cards",
       "required": true
+    },
+    "back_to_committees": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }

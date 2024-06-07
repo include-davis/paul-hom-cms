@@ -840,13 +840,6 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
           localized: true;
         };
       }>;
-    youtube_link: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -932,6 +925,13 @@ export interface ApiCommitteesPageCommitteesPage extends Schema.SingleType {
           localized: true;
         };
       }>;
+    back_to_committees: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -951,6 +951,103 @@ export interface ApiCommitteesPageCommitteesPage extends Schema.SingleType {
       'api::committees-page.committees-page',
       'oneToMany',
       'api::committees-page.committees-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiGetInvolvedGetInvolved extends Schema.SingleType {
+  collectionName: 'get_involveds';
+  info: {
+    singularName: 'get-involved';
+    pluralName: 'get-involveds';
+    displayName: 'get_involved';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    page_title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    involvement_opportunities: Attribute.Component<'get-involved.involvement-cards'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    details_text: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sign_up_text: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    donate_today_text: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    donation_instruction: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    thank_you_text: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    address: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::get-involved.get-involved',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::get-involved.get-involved',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::get-involved.get-involved',
+      'oneToMany',
+      'api::get-involved.get-involved'
     >;
     locale: Attribute.String;
   };
@@ -1195,6 +1292,27 @@ export interface ApiServicesPageServicesPage extends Schema.SingleType {
           localized: true;
         };
       }>;
+    page_title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    referrals_title_text: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    translators_title_text: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1294,6 +1412,7 @@ declare module '@strapi/types' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::closure-date.closure-date': ApiClosureDateClosureDate;
       'api::committees-page.committees-page': ApiCommitteesPageCommitteesPage;
+      'api::get-involved.get-involved': ApiGetInvolvedGetInvolved;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::services-page.services-page': ApiServicesPageServicesPage;
