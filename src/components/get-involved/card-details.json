@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_get_involved_card_details",
+  "info": {
+    "displayName": "card_details",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title_short": {
+      "type": "string",
+      "required": true
+    },
+    "title_long": {
+      "type": "string",
+      "required": true
+    },
+    "content_1": {
+      "type": "text",
+      "required": true
+    },
+    "content_2": {
+      "type": "text",
+      "required": true
+    },
+    "sign_up_link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

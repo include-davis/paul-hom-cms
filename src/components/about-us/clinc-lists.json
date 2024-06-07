@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_us_clinc_lists",
+  "info": {
+    "displayName": "clinc_lists",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "clinic_category_title": {
+      "type": "string",
+      "required": true
+    },
+    "clinic_details": {
+      "displayName": "name-link-combo",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.name-link-combo",
+      "required": true
+    }
+  }
+}

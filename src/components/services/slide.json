@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_services_slides",
+  "info": {
+    "displayName": "slides",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "displayName": "slide_details",
+      "type": "component",
+      "repeatable": true,
+      "component": "services.slide-details",
+      "required": true
+    },
+    "slide_count": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

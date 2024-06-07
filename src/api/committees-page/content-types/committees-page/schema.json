@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "committees_pages",
+  "info": {
+    "singularName": "committees-page",
+    "pluralName": "committees-pages",
+    "displayName": "committees_page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title_text": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "cards": {
+      "displayName": "committee_cards",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "committees.committee-cards",
+      "required": true
+    },
+    "back_to_committees": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    }
+  }
+}
