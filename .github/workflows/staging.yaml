@@ -32,20 +32,16 @@ jobs:
 
       - name: Publish to Vercel
         working-directory: ./runtime-environment
+        env:
+          MONGO_CONNECTION_STRING: ${{ secrets.MONGO_CONNECTION_STRING }}
+          CLOUDINARY_NAME: ${{ secrets.CLOUDINARY_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          REVALIDATE_URL: ${{ vars.REVALIDATE_URL }}
         run: |
           npm install -g vercel
-          vercel \
-          --token ${{ secrets.VERCEL_TOKEN }} \
-          -n ${{ vars.VERCEL_PROJECT }} \
-          --yes \
-          --prod \
-          --env MONGO_CONNECTION_STRING=${{ secrets.MONGO_CONNECTION_STRING }} \
-          --env CLOUDINARY_NAME=${{ secrets.CLOUDINARY_NAME }} \
-          --env CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }} \
-          --env CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }} \
-          --env JWT_SECRET=${{ secrets.JWT_SECRET }} \
-          --env REVALIDATE_URL=${{ vars.REVALIDATE_URL }} \
-          --build-env MONGO_CONNECTION_STRING=${{ secrets.MONGO_CONNECTION_STRING }}
-
+          vercel --token ${{ secrets.VERCEL_TOKEN }} -n ${{ vars.VERCEL_PROJECT }} --yes --prod
+          
       - name: Success
         run: echo "🚀  Deploy successful 🚀 "
