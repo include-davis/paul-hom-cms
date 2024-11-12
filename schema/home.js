@@ -1,73 +1,100 @@
 const { ContentType, FieldType } = require('@include/hearth');
+const { createFieldsI18n } = require('../utils/schema_utils');
 
-const home = new ContentType({ name: 'home-chinese', singularDisplayName: 'Home (Chinese)' });
+const home = new ContentType({ name: 'home', singularDisplayName: 'Home' });
 
-home
-  .createField({
+const fields = [
+  {
+    name: 'home_gallery',
+    displayName: 'Homepage Gallery Images',
+    type: FieldType.MEDIA_LIST,
+    required: true,
+    noi18n: true,
+  },
+  {
     name: 'image_gallery_overlay_title',
     displayName: 'Title text over the image gallery',
     type: FieldType.SHORT_TEXT,
     required: true,
-  })
-  .createField({
+  },
+  {
     name: 'image_gallery_overlay_description',
     displayName: 'Description text over the image gallery',
     type: FieldType.SHORT_TEXT,
     required: true,
-  })
-  .createField({
+  },
+  {
+    name: 'home_mission_image',
+    displayName: 'Mission Section Image',
+    type: FieldType.MEDIA_LIST,
+    required: true,
+    noi18n: true,
+  },
+  {
     name: 'our_mission_title',
     displayName: '"Our Mission" text',
     type: FieldType.SHORT_TEXT,
     required: true,
-  })
-  .createField({
+  },
+  {
     name: 'our_mission_text',
     displayName: 'Mission',
-    type: FieldType.LONG_TEXT,
+    type: FieldType.SHORT_TEXT,
     required: true,
-  })
-  .createField({
+  },
+  {
     name: 'visit_us_text',
     displayName: '"Visit Us" text',
     type: FieldType.SHORT_TEXT,
     required: true,
-  })
-  .createField({
+  },
+  {
     name: 'contact_instruction',
     displayName: 'Instructions for Contacting',
     type: FieldType.SHORT_TEXT,
     required: true,
-  })
-  .createField({
+  },
+  {
     name: 'message',
     displayName: '"Message" text',
     type: FieldType.SHORT_TEXT,
     required: true,
-  })
-  .createField({
+  },
+  {
     name: 'closure_dates_text',
     displayName: '"Closure Dates" text',
     type: FieldType.SHORT_TEXT,
     required: true,
-  })
-  .createField({
+  },
+  {
     name: 'closure_dates',
-    displayName: '5 Upcoming Closure Dates (Use a bulleted list, each bullet formatted exactly like Dec 1, 2025 : Event Name)',
-    type: FieldType.LONG_TEXT,
+    displayName: 'Upcoming Closure Dates (Separated by semicolons, each item formatted as Dec 1, 2025)',
+    type: FieldType.SHORT_TEXT,
     required: true,
-  })
-  .createField({
+    noi18n: true,
+  },
+  {
     name: 'upcoming_events_text',
     displayName: '"Upcoming Events" text',
     type: FieldType.SHORT_TEXT,
     required: true,
-  })
-  .createField({
+  },
+  {
     name: 'upcoming_events',
-    displayName: '5 Upcoming Events (Use a bulleted list, each bullet formatted exactly like Dec 1, 2025)',
-    type: FieldType.LONG_TEXT,
+    displayName: 'Upcoming Events (Separated by semicolons, each item formatted as Dec 1, 2025 : Event Name)',
+    type: FieldType.SHORT_TEXT,
     required: true,
-  });
+    noi18n: true,
+  },
+  {
+    name: 'home_upcoming_events_image',
+    displayName: 'Upcoming Events Section Image',
+    type: FieldType.MEDIA_LIST,
+    required: true,
+    noi18n: true,
+  },
+];
+
+createFieldsI18n(home, fields);
 
 module.exports = home;
